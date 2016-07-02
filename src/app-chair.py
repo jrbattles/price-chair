@@ -11,7 +11,14 @@ element = soup.find("span", {"class": "SEOFinalPrice", "itemprop": "price"})
 string_price = element.text.strip()  ## $494.59
 
 price_without_symbol = string_price[1:]
-print(float(price_without_symbol))
+price = float(price_without_symbol)
+
+if price < 400:
+    print("You should buy the chair!")
+    print("The current price is {}.".format(string_price))
+else:
+    print("Do not buy!! the chair is too expensive!")
+    print("The current price is {}.".format(string_price))
 
 
 
